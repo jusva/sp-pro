@@ -1,0 +1,23 @@
+
+spring:
+  cloud:    inetutils:
+      #配置不需要的网卡
+      ignored-interfaces:
+      - VM.*
+      
+      #配置网段
+      #preferred-networks:
+      #-192.168.1
+
+  
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+      name: item-service
+      profile: dev
+      
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka      
